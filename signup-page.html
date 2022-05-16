@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Group Project</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <style>
+            /* same as login page */
+            img {
+                display: block;
+                margin-left: 10px;
+                width: 200px;
+                padding: 10px;
+            }
+
+            #signup-button {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 500px;
+                color: white;
+                border-radius: 5px;
+                float: left;
+                width: 100px;
+                padding: 5px;
+                border: none;
+                background-color: black;  
+            }
+
+            #signup-button:hover {
+                background-color: mediumseagreen;
+            }
+
+            .flex-signup-form {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-content: center;
+                margin: 10px;
+                padding: 10px;
+                /* border-style: solid; */
+            }
+
+            .signup-form-header {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: x-large;
+                color: black;
+                /* border-style: solid; */
+                align-self: flex-start;
+                padding-bottom: 10px;
+            }
+
+            .signup-form-email {
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                align-content: center;
+                /* border-style: solid; */
+            }
+
+            .signup-form-pwd {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-content: center;
+                margin-top: 5px;
+                /* border-style: solid;         */
+            }
+
+            /* .pwd1 {
+                padding-right: 40px;
+            } */
+
+            .signup-bottom-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding-top: 10px;
+                /* border-style: solid; */
+            }
+
+            .redirect-to-login {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: black;
+                font-size: large;
+                padding-left: 0px;
+                padding-right: 20px;
+                padding-top: 5px;
+                /* border-style: solid; */
+                
+            }
+
+            /* input[type=text] {
+                width: 100%;
+                padding: 5px;
+            }
+
+            input[type=password] {
+                width: 120%;
+                padding: 5px;
+            } */
+        </style>
+    </head>
+    <body>
+
+        <!-- <h2>INFO 532 Group Project Demo</h2> -->
+
+        <!-- <ul id="header">
+            <li id="headerli"><a href="welcome-page.html">Welcome</a></li>
+            <li id="headerli"><a class="active" href="signup-page.html">Sign up</a></li>
+            <li id="headerli"><a href="login-page.html">Log in</a></li>
+            <li id="headerli"><a href="home-page.html">Home</a></li>
+        </ul>
+
+        <div class="signup-title">
+            Create your account
+        </div> -->
+
+        <a href="landing-page.html">
+            <img src="logo-image2.png" alt="site image TaskRobot">
+        </a>
+
+        <div class="flex-signup-form">
+
+            <div class="signup-break"></div>
+
+            <div class="middle-of-signup">
+
+                <div class="signup-form-header">
+                    Sign up
+                </div>
+
+                <div class="signup-form-email">
+                    <label for="email"></label>
+                    <input name="email" type="text" value="" placeholder="Email">
+                </div>
+
+                <div class="signup-form-pwd">
+                    <div class="pwd1">
+                        <label for="pwd"></label>
+                        <input name="pwd" type="password" value="" placeholder="Password">
+                    </div>
+                    <div class="pwd2">
+                        <label for="pwdconfirm"></label>
+                        <input name="pwdconfirm" type="password" value="" placeholder="Confirm Password">
+                    </div>
+                    
+                </div>
+
+                <div class="signup-bottom-row">
+                    <div class="redirect-to-login">
+                        Have an account? <a href="login-page.html">Log in</a>
+                    </div>
+
+                    <!-- <button type="reset">Clear</button> -->
+                    <button type="button" id="signup-button" onclick="location.href='task-page.html'">Next</button>
+                </div>
+
+            </div>
+
+            <div class="signup-break"></div>
+
+        </div>
+        
+
+    </body>
+</html>

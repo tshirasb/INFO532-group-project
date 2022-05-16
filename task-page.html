@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Group Project</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            /* same as login page */
+            img {
+                display: block;
+                margin-left: 10px;
+                width: 200px;
+                padding: 10px;
+            }
+        </style>
+        
+    </head>
+    <body>
+
+        <!-- <h2>INFO 532 Group Project Demo</h2>
+
+        <ul id="header">
+            <li id="headerli"><a href="welcome-page.html">Welcome</a></li>
+            <li id="headerli"><a href="signup-page.html">Sign up</a></li>
+            <li id="headerli"><a href="login-page.html">Log in</a></li>
+            <li id="headerli"><a class="active" href="home-page.html">Home</a></li>
+        </ul> -->
+
+        <a href="landing-page.html">
+            <img src="logo-image2.png" alt="site image TaskRobot">
+        </a>
+
+        <div class="todo-title">
+            <input type="text" name="task" id="task" placeholder="type task here...">
+            <button type="button" onclick="addToDo()">Add Task</button>
+
+            <ul id="todo-list">
+                <li>Sample</li>
+                <li>Example</li>
+            </ul>
+        </div>
+
+        <script>
+            // TODO: figure out how to add input text to a list
+            // function addToDo(){
+            //     var li = document.createElement("li");
+            //     var inputTask = document.getElementById("task").value;
+            //     var newTask = document.createTextNode(inputTask);
+            //     li.appendChild(newTask);
+
+            //     if (inputTask === ""){
+            //         alert("Please enter a task.");
+            //     }
+            //     else {
+            //         document.getElementById("task").appendChild(li);
+            //     }
+            //     document.getElementById("task").value = "";
+
+                // var span = document.createElement("SPAN");
+                // var txt = document.createTextNode("\u00D7");
+                // span.className = "close";
+                // li.appendChild(span);
+
+                // for (i = 0; i < close.length; i++){
+                //     close[i].onclick = function(){
+                //         var div = this.parentElement;
+                //         div.style.display = "none";
+                //     }
+                // }
+            // }
+        </script>
+
+    </body>
+</html>
