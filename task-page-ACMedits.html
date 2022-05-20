@@ -10,16 +10,115 @@
             {box-sizing: border-box;}
             html,body{width: 100%; height: 100%; margin:  0}
             #div1 {
-                height: 60%;
+                height: 50%;
                 display: flex;
                 gap: 10px;
                 padding: 10px;
+                border-style: solid;
             }
             #inputForm{
-                width:  60%;
+                width:  50%;
+                display: flex;
+                flex-direction: column;
+                /* justify-content: space-between; */
+                border-style: solid;
+                border-color: red;
+
             }
+                
+            #div1-header {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: x-large;
+                color: black;
+
+                border-style: solid;
+                border-color: orange;
+
+                /* display: flex; */
+                /* align-self: flex-start; */
+                height: auto;
+            }
+
+            #all-task-input{
+                display: flex;
+                flex-direction: row;
+                /* height: 40%; */
+
+                border-style: solid;
+                border-color: black;
+            }
+
+            #inputLeft{
+                display: flex;
+                flex-direction: column;
+                border-style: solid;
+                border-color: yellow;
+
+            }
+
+            /* #text-input {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-content: center;
+                border-style: solid;
+                border-color: blue;
+            } */
+
+            #task-title-input {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            .checkbox-input {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                border-style: solid;
+                border-color: green;
+                line-height: 2px;
+                
+            }
+
+            /* .checkbox-input-form{
+                flex: none;
+                border-style: solid;
+                border-color:purple;
+                margin-bottom: 10px;
+            } */
+
+            .task-submit-btn-div{
+                border-style: solid;
+                width: auto;
+                align-self: flex-end;
+                margin-top: auto;
+            }
+            
+
+            #task-submit-btn{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 500px;
+                color: white;
+                border-radius: 5px;
+                /* float: bottom; */
+                width: 100px;
+                padding: 5px;
+                border: none;
+                background-color: black;
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+                /* align-self: flex-end; */
+            }
+
+            #task-submit-btn:hover {
+                background-color: mediumseagreen;
+            }
+
             #quickList{
+                display: flex;
                 width: 40%;
+                border-style: solid;
             }
             #div2 {
                 height: 40%;
@@ -27,10 +126,39 @@
                 gap: 10px;
                 justify-content: space-around;
                 padding: 10px;
+                /* border-style: solid; */
             }
             .weekdays{
                 width: calc(100%/5 - 10px);
                 background-color: lightgray;
+                display: flex;
+                /* border-style: solid; */
+            }
+
+            img {
+                display: flex;
+                margin-left: 10px;
+                width: auto;
+                height: 10%;
+                padding: 10px;
+            }
+
+            /* this bit makes the text input thicker */
+            input[type=text] {
+                width: 100%;
+                padding: 10px;
+                /* margin: 8px 0; */
+                box-sizing: border-box;
+            }
+            textarea {
+                width: 100%;
+                height: 100px;
+                padding: 10px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                /* font-size: 16px; */
+                resize: none;
             }
         </style>
         
@@ -38,7 +166,6 @@
     <body>
 
         <!-- <h2>INFO 532 Group Project Demo</h2>
-
         <ul id="header">
             <li id="headerli"><a href="welcome-page.html">Welcome</a></li>
             <li id="headerli"><a href="signup-page.html">Sign up</a></li>
@@ -46,12 +173,76 @@
             <li id="headerli"><a class="active" href="home-page.html">Home</a></li>
         </ul> -->
 
-<!--         <a href="landing-page.html">
+        <a href="landing-page.html">
             <img src="logo-image2.png" alt="site image TaskRobot">
-        </a> -->
+        </a>
+
         <div id="div1">
-            <div id="inputForm">Input Tasks</div>
-            <div id="quickList">Quick List</div>
+            <div id="inputForm">
+                <div id="div1-header">
+                    Input Tasks
+                </div>
+
+                <div id="all-task-input">
+                    <div id="inputLeft">
+                        <!-- <div id="text-input"> -->
+                            <div id="text-input-form">
+                                <div id="title-input">
+                                    <label for="task-title-input"></label><input name="task-title-input" id="task-title-input" type="text" value="" placeholder="task title (required)"></br>
+                                </div>
+                                
+                                <label for="task-desc-input"></label><textarea name="task-desc-input" rows="4" cols="50" placeholder="task description (optional)"></textarea></br>
+                            </div>
+                        <!-- </div> -->
+                    </div>
+                    <div class="checkbox-input">
+                        <div class="checkbox-input-form" >
+                            <h3>Priority:</h3>
+                            <input type="radio" id="priorityHigh" name="priorityLevel" value="High">
+                            <label for="priorityHigh"> High</label>
+                            <input type="radio" id="priorityMedium" name="priorityLevel" value="Medium">
+                            <label for="priorityMedium"> Medium</label>
+                            <input type="radio" id="priorityLow" name="priorityLevel" value="Low">
+                            <label for="priorityLow"> Low</label><br><br>
+                            <h3>Due:</h3>
+                            <input type="radio" id="Monday" name="dueDate" value="M">
+                            <label for="Monday"> M</label>
+                            <input type="radio" id="Tuesday" name="dueDate" value="T">
+                            <label for="Tuesday"> T</label>
+                            <input type="radio" id="Wednesday" name="dueDate" value="W">
+                            <label for="Wednesday"> W</label>
+                            <input type="radio" id="Thursday" name="dueDate" value="R">
+                            <label for="Thursday"> R</label>
+                            <input type="radio" id="Friday" name="dueDate" value="F">
+                            <label for="Friday"> F</label><br><br>
+                            <h3>Repeat:</h3>
+                            <input type="checkbox" id="Monday" name="Monday" value="M">
+                            <label for="Monday"> M</label>
+                            <input type="checkbox" id="Tuesday" name="Tuesday" value="T">
+                            <label for="Tuesday"> T</label>
+                            <input type="checkbox" id="Wednesday" name="Wednesday" value="W">
+                            <label for="Wednesday"> W</label>
+                            <input type="checkbox" id="Thursday" name="Thursday" value="R">
+                            <label for="Thursday"> R</label>
+                            <input type="checkbox" id="Friday" name="Friday" value="F">
+                            <label for="Friday"> F</label><br><br>
+                        </div>
+    
+                        <div class="task-submit-btn-div">
+                            <button type="button" id="task-submit-btn">Submit Task</button>
+                        </div>
+                    </div>
+                <!-- end of all task input -->
+                </div>
+
+            <!-- end of input form -->
+            </div>
+
+            <div id="quickList">
+                Quick List
+            </div>
+
+        <!-- end of div 1 -->
         </div>
 
         <div id="div2">
@@ -61,39 +252,6 @@
             <div class="weekdays">Thursday</div>
             <div class="weekdays">Friday</div>
         </div>
-
-
-
-
-        <script>
-            // TODO: figure out how to add input text to a list
-            // function addToDo(){
-            //     var li = document.createElement("li");
-            //     var inputTask = document.getElementById("task").value;
-            //     var newTask = document.createTextNode(inputTask);
-            //     li.appendChild(newTask);
-
-            //     if (inputTask === ""){
-            //         alert("Please enter a task.");
-            //     }
-            //     else {
-            //         document.getElementById("task").appendChild(li);
-            //     }
-            //     document.getElementById("task").value = "";
-
-                // var span = document.createElement("SPAN");
-                // var txt = document.createTextNode("\u00D7");
-                // span.className = "close";
-                // li.appendChild(span);
-
-                // for (i = 0; i < close.length; i++){
-                //     close[i].onclick = function(){
-                //         var div = this.parentElement;
-                //         div.style.display = "none";
-                //     }
-                // }
-            // }
-        </script>
 
     </body>
 </html>
