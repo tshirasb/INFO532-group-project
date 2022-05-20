@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Group Project</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            *
+            {box-sizing: border-box;}
+            html,body{width: 100%; height: 100%; margin:  0}
+            #div1 {
+                height: 50%;
+                display: flex;
+                gap: 10px;
+                padding: 10px;
+                /* border-style: solid; */
+            }
+            #inputForm{
+                width:  50%;
+                display: flex;
+                flex-direction: column;
+                /* align-content: space-around; */
+                /* justify-content: space-between; */
+                /* border-style: solid;
+                border-color: red; */
+
+            }
+                
+            #div1-header {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: x-large;
+                color: black;
+
+                /* border-style: solid;
+                border-color: orange; */
+
+                display: flex;
+                flex-direction: row;
+                /* align-self: flex-start; */
+                height: auto;
+                justify-content: flex-start;
+            }
+            p{
+                /* border-style: dotted; */
+                padding-left: 0%;
+                margin: 0;
+            }
+
+            #all-task-input{
+                display: flex;
+                flex-direction: row;
+                justify-content:center;
+                /* padding: 10px; */
+                /* height: 40%; */
+
+                /* border-style: solid;
+                border-color: black; */
+            }
+
+            #inputLeft{
+                display: flex;
+                flex-direction: column;
+                padding-right: 10px;
+                padding-top: 10px;
+                /* border-style: solid;
+                border-color: yellow; */
+
+            }
+
+            #task-title-input {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            .checkbox-input {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items:flex-end;
+
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: small;
+
+                /* border-style: solid;
+                border-color: green; */
+                line-height: 2px;
+                
+            }
+
+            /* .checkbox-input-form{
+                flex: none;
+                border-style: solid;
+                border-color:purple;
+                margin-bottom: 10px;
+            } */
+
+            .task-submit-btn-div{
+                /* border-style: solid; */
+                width: auto;
+                align-self: flex-end;
+                margin-top: auto;
+            }
+            #task-submit-btn{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 500px;
+                color: white;
+                border-radius: 5px;
+                /* float: bottom; */
+                width: 100px;
+                padding: 5px;
+                border: none;
+                background-color: black;
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+                /* align-self: flex-end; */
+            }
+            #task-submit-btn:hover {
+                background-color: mediumseagreen;
+            }
+            #quickList{
+                display: flex;
+                flex-direction: column;
+                width: 40%;
+                /* border-style: solid; */
+
+            }
+
+            #quickListHeader{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: x-large;
+                color: black;
+                /* border-style: solid; */
+
+            }
+
+            #quickListBody{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: black;
+                /* border-style: solid; */
+
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            #div2 {
+                height: 40%;
+                display:  flex;
+                gap: 10px;
+                justify-content: space-around;
+                padding: 10px;
+                /* border-style: solid; */
+            }
+            .weekdays{
+                width: calc(100%/5 - 10px);
+                background-color: lightgray;
+                display: flex;
+                /* border-style: solid; */
+            }
+            img {
+                display: flex;
+                margin-left: 10px;
+                width: auto;
+                height: 10%;
+                padding: 10px;
+            }
+            /* this bit makes the text input thicker */
+            input[type=text] {
+                width: 100%;
+                padding: 10px;
+                /* margin: 8px 0; */
+                box-sizing: border-box;
+            }
+            textarea {
+                width: 100%;
+                height: 150px;
+                padding: 10px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                font-size: 14px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                resize: none;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <a href="landing-page.html">
+            <img src="logo-image2.png" alt="site image TaskRobot">
+        </a>
+
+        <div id="div1">
+            <div id="inputForm">
+                <div id="div1-header">
+                    <p></p>
+                    <p>Input Tasks</p>
+                    
+                </div>
+
+                <div id="all-task-input">
+                    <div id="inputLeft">
+                        <label for="task-title-input"></label><input name="task-title-input" id="task-title-input" type="text" value="" placeholder="task title (required)"></br>
+                        <label for="task-desc-input"></label><textarea name="task-desc-input" rows="4" cols="50" placeholder="task description (optional)"></textarea></br>
+                    </div>
+                    <div class="checkbox-input">
+                        <div class="checkbox-input-form" >
+                            <h3>Priority:</h3>
+                            <input type="radio" id="priorityHigh" name="priorityLevel" value="High">
+                            <label for="priorityHigh"> High</label>
+                            <input type="radio" id="priorityMedium" name="priorityLevel" value="Medium">
+                            <label for="priorityMedium"> Medium</label>
+                            <input type="radio" id="priorityLow" name="priorityLevel" value="Low">
+                            <label for="priorityLow"> Low</label><br><br>
+                            <h3>Due:</h3>
+                            <input type="checkbox" id="Monday" name="dueDate" value="M">
+                            <label for="Monday"> M</label>
+                            <input type="checkbox" id="Tuesday" name="dueDate" value="T">
+                            <label for="Tuesday"> T</label>
+                            <input type="checkbox" id="Wednesday" name="dueDate" value="W">
+                            <label for="Wednesday"> W</label>
+                            <input type="checkbox" id="Thursday" name="dueDate" value="R">
+                            <label for="Thursday"> R</label>
+                            <input type="checkbox" id="Friday" name="dueDate" value="F">
+                            <label for="Friday"> F</label><br><br>
+                            <h3>Repeat:</h3>
+                            <input type="checkbox" id="Monday" name="Monday" value="M">
+                            <label for="Monday"> M</label>
+                            <input type="checkbox" id="Tuesday" name="Tuesday" value="T">
+                            <label for="Tuesday"> T</label>
+                            <input type="checkbox" id="Wednesday" name="Wednesday" value="W">
+                            <label for="Wednesday"> W</label>
+                            <input type="checkbox" id="Thursday" name="Thursday" value="R">
+                            <label for="Thursday"> R</label>
+                            <input type="checkbox" id="Friday" name="Friday" value="F">
+                            <label for="Friday"> F</label><br><br>
+                        </div>
+    
+                        <div class="task-submit-btn-div">
+                            <button type="button" id="task-submit-btn" onclick="writeTask()" >Submit Task</button>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- end of input form -->
+            </div>
+
+            <div id="quickList">
+                <div id="quickListHeader">
+                    Quick List
+                </div>
+                <ul>
+                    <div id="quickListBody">
+
+                    </div>
+                </ul>
+                
+            </div>
+
+        <!-- end of div 1 -->
+        </div>
+
+        <div id="div2">
+            <div class="weekdays">Monday</div>
+            <div class="weekdays">Tuesday</div>
+            <div class="weekdays">Wednesday</div>
+            <div class="weekdays">Thursday</div>
+            <div class="weekdays">Friday</div>
+        </div>
+
+        <script>
+            function writeTask(){
+                // get the task title
+                var taskTitle = document.getElementById("task-title-input").value;
+
+                // make checkbox
+                // creating checkbox element
+                var checkbox = document.createElement("input");
+              
+                // Assigning the attributes to created checkbox
+                checkbox.type = "checkbox";
+
+                // make <li> elements 
+                var newLine = document.createElement("li");
+                // li.innerHTML =  add functions to checkbox
+
+                //put the task title and checkbox in the <li>
+                var newTask = document.createTextNode(taskTitle);
+                newLine.appendChild(checkbox);
+                newLine.appendChild(newTask);
+
+                //put the <li> in the quicklist div
+                var quickListDiv = document.querySelector("#quickListBody");
+                quickListDiv.appendChild(newLine);
+
+
+            }
+
+        </script>
+
+    </body>
+</html>
