@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Group Project</title>
+        <link rel="stylesheet" href="stylesheet.css">
+
+        <!-- trashcan emoji stylesheet w3schools -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            *
+            {box-sizing: border-box;}
+            html,body{width: 100%; height: 100%; margin:  0}
+            #div1 {
+                height: 50%;
+                display: flex;
+                gap: 10px;
+                padding: 10px;
+                /* border-style: solid; */
+            }
+            #inputForm{
+                width:  50%;
+                display: flex;
+                flex-direction: column;
+                /* align-content: space-around; */
+                /* justify-content: space-between; */
+                /* border-style: solid;
+                border-color: red; */
+
+            }
+                
+            #div1-header {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: x-large;
+                color: black;
+
+                /* border-style: solid;
+                border-color: orange; */
+
+                display: flex;
+                flex-direction: row;
+                /* align-self: flex-start; */
+                height: auto;
+                justify-content: flex-start;
+            }
+            p{
+                /* border-style: dotted; */
+                padding-left: 0%;
+                margin: 0;
+            }
+
+            #all-task-input{
+                display: flex;
+                flex-direction: row;
+                justify-content:center;
+                /* padding: 10px; */
+                /* height: 40%; */
+
+                /* border-style: solid;
+                border-color: black; */
+            }
+
+            #inputLeft{
+                display: flex;
+                flex-direction: column;
+                padding-right: 10px;
+                padding-top: 10px;
+                /* border-style: solid;
+                border-color: yellow; */
+
+            }
+
+            #task-title-input {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            .checkbox-input {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items:flex-end;
+
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: small;
+
+                /* border-style: solid;
+                border-color: green; */
+                line-height: 2px;
+                
+            }
+
+            .checkbox-input-form{
+                /* make the list items unselectable */
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            } 
+
+            #task-buttons-div{
+                display: flex;
+                flex-direction: row;
+                /* border-style: dashed; */
+                padding: 10px;
+                justify-content: space-between;
+                align-content: center;
+                width: 100%;
+            }
+            #task-clear-div{
+                display:flex;
+                padding-top: 10px;
+            }
+            #task-clear-btn{
+                background-color: lightcoral;
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+                border:none;
+                border-radius: 5px;
+                align-self: flex-end;
+                width: 30px;
+                height: 30px;
+            }
+            #task-clear-btn:hover{
+                background-color: black;
+            }
+            .task-submit-btn-div{
+                /* border-style: solid; */
+                width: auto;
+                align-self: flex-end;
+                margin-top: auto;
+                display: flex;
+            }
+            #task-submit-btn{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 500px;
+                color: white;
+                border-radius: 5px;
+                /* float: bottom; */
+                width: 100px;
+                padding: 5px;
+                border: none;
+                background-color: black;
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+                /* align-self: flex-end; */
+
+            }
+            #task-submit-btn:hover {
+                background-color: mediumseagreen;
+            }
+            #quickList{
+                display: flex;
+                flex-direction: column;
+                width: 40%;
+                /* border-style: solid; */
+
+            }
+
+            #quickListHeader{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: x-large;
+                color: black;
+                /* border-style: solid; */
+
+            }
+
+            #quickListBody{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: black;
+                /* border-style: solid; */
+
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            #div2 {
+                height: 40%;
+                display:  flex;
+                gap: 10px;
+                justify-content: space-around;
+                padding: 10px;
+                /* border-style: solid; */
+            }
+            .weekdays{
+                width: calc(100%/5 - 10px);
+                background-color: lightgray;
+                display: flex;
+                flex-direction: column;
+                /* border-style: solid; */
+            }
+            .weekday-header{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: large;
+                color: black;
+                /* border-style:solid; */
+                align-self:center;
+                display: flex;
+                justify-content:center;
+                width: 225px;
+                margin-top: 5px;
+                padding: 5px;
+                background-color: mediumseagreen;
+            }
+
+            img {
+                /* display: flex; */
+                margin-left: 10px;
+                width: auto;
+                height: 8%;
+                /* border-style: solid; */
+            }
+
+            /* this bit makes the text input thicker */
+            input[type=text] {
+                width: 100%;
+                padding: 10px;
+                /* margin: 8px 0; */
+                box-sizing: border-box;
+            }
+            textarea {
+                width: 100%;
+                height: 150px;
+                padding: 10px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                font-size: 14px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                resize: none;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <a href="landing-page.html">
+            <img src="logo-image2.png" alt="site image TaskRobot">
+        </a>
+
+        <div id="div1">
+            <div id="inputForm">
+                <div id="div1-header">
+                    <p></p>
+                    <p>Input Tasks</p>
+                    
+                </div>
+
+                <div id="all-task-input">
+                    <div id="inputLeft">
+                        <label for="task-title-input"></label><input name="task-title-input" id="task-title-input" type="text" value="" placeholder="task title (required)"></br>
+                        <label for="task-desc-input"></label><textarea name="task-desc-input" id="task-desc-input" rows="4" cols="50" placeholder="task description (optional)"></textarea></br>
+                    </div>
+                    <div class="checkbox-input">
+                        <div class="checkbox-input-form" >
+                            <form name="checkboxInputForm">
+                                <h3>Priority:</h3>
+                            <input type="radio" id="priorityHigh" name="priorityLevel" value="High">
+                            <label for="priorityHigh"> High</label>
+                            <input type="radio" id="priorityMedium" name="priorityLevel" value="Medium">
+                            <label for="priorityMedium"> Medium</label>
+                            <input type="radio" id="priorityLow" name="priorityLevel" value="Low">
+                            <label for="priorityLow"> Low</label><br><br>
+                            <h3>Due:</h3>
+                            <input type="checkbox" id="Monday" name="dueDate" class="dueDate" value="M">
+                            <label for="Monday"> M</label>
+                            <input type="checkbox" id="Tuesday" name="dueDate" class="dueDate" value="T">
+                            <label for="Tuesday"> T</label>
+                            <input type="checkbox" id="Wednesday" name="dueDate" class="dueDate" value="W">
+                            <label for="Wednesday"> W</label>
+                            <input type="checkbox" id="Thursday" name="dueDate" class="dueDate" value="R">
+                            <label for="Thursday"> R</label>
+                            <input type="checkbox" id="Friday" name="dueDate" class="dueDate" value="F">
+                            <label for="Friday"> F</label><br><br>
+                            <!-- <h3>Repeat:</h3>
+                            <input type="checkbox" id="MondayR" name="repeatDate" value="Mr">
+                            <label for="MondayR"> M</label>
+                            <input type="checkbox" id="TuesdayR" name="repeatDate" value="Tr">
+                            <label for="TuesdayR"> T</label>
+                            <input type="checkbox" id="WednesdayR" name="repeatDate" value="Wr">
+                            <label for="WednesdayR"> W</label>
+                            <input type="checkbox" id="ThursdayR" name="repeatDate" value="Rr">
+                            <label for="ThursdayR"> R</label>
+                            <input type="checkbox" id="FridayR" name="repeatDate" value="Fr">
+                            <label for="FridayR"> F</label><br><br> -->
+                            
+                            <div id="task-buttons-div">
+                                <div id="task-clear-div">
+                                    <button type="button" id="task-clear-btn" onclick="formReset()"><i class="fa fa-trash-o" style="color:white"></i></button>
+                                </div>
+                                <div class="task-submit-btn-div">
+                                    <button type="button" id="task-submit-btn" onclick="submitFunc()" >Submit Task</button>
+                                </div>
+                            </div>
+                            </form>
+                            
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+
+            <!-- end of input form -->
+            </div>
+
+            <div id="quickList">
+                <div id="quickListHeader">
+                    Quick List
+                </div>
+                <ul>
+                    <div id="quickListBody">
+
+                    </div>
+                </ul>
+                
+            </div>
+
+        <!-- end of div 1 -->
+        </div>
+
+        <div id="div2">
+            <div class="weekdays" id="M">
+                <div class="weekday-header">Monday</div>
+                <ul>
+                    <div id="mondayBody" name="dayofweek">
+
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="T">
+                <div class="weekday-header">Tuesday</div>
+                <ul>
+                    <div id="tuesdayBody">
+
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="W">
+                <div class="weekday-header">Wednesday</div>
+                <ul>
+                    <div id="wednesdayBody">
+
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="R">
+                <div class="weekday-header">Thursday</div>
+                <ul>
+                    <div id="thursdayBody">
+
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="F">
+                <div class="weekday-header">Friday</div>
+                <ul>
+                    <div id="fridayBody">
+
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+
+            function formReset(){
+                document.getElementById("task-title-input").value = "";
+                document.getElementById("task-desc-input").value = "";
+
+                for (i = 0; i < 3; i++){
+                    document.checkboxInputForm.priorityLevel[i].checked = false;                }
+
+                for (i = 0; i < 5; i++){
+                    document.checkboxInputForm.dueDate[i].checked = false;
+                }
+                for (i = 0; i < 5; i++){
+                    document.checkboxInputForm.repeatDate[i].checked = false;
+                }
+
+            }
+
+            // put tasks into calendar if due date isnt checked
+            //below is read function
+            //include if statement to call two other functions
+            function submitFunc(){
+                var summonCheckbox = document.querySelectorAll(".dueDate");
+
+                for (i = 0; i < 5; i++){
+                    if (summonCheckbox[0].checked == false && summonCheckbox[1].checked == false &&
+                    summonCheckbox[2].checked == false && summonCheckbox[3].checked == false &&
+                    summonCheckbox[4].checked == false)
+                    {
+                        console.log(summonCheckbox[i].checked)
+                        writeTask();
+                } else {
+                    console.log(summonCheckbox[i].checked)
+                    writeCalTask();
+                }
+                }
+                
+
+            }
+                
+
+            function writeCalTask(){
+                calArray = new Array(
+                    "mondayBody",
+                    "tuesdayBody",
+                    "wednesdayBody",
+                    "thursdayBody",
+                    "fridayBody"
+                );
+
+                //days of week
+               
+                var monCheck = document.querySelector("#Monday");
+                var tuesCheck = document.querySelector("#Tuesday");
+                var wedCheck = document.querySelector("#Wednesday");
+                var thursCheck = document.querySelector("#Thursday");
+                var friCheck = document.querySelector("#Friday");
+
+                calendarcheckArray = new Array(
+                    monCheck,
+                    tuesCheck,
+                    wedCheck,
+                    thursCheck,
+                    friCheck
+                )
+
+                for (i = 0; i < 5; i++){
+                    if (calendarcheckArray[i].checked == true){
+                        var taskTitle = document.getElementById("task-title-input").value;
+                        var newTask =  document.createTextNode(taskTitle);
+                        var newLine = document.createElement("li");
+                        var checkbox = document.createElement("input");
+                        checkbox.type = "checkbox";
+                        checkbox.className = "checkboxid";
+                        var remove = document.createElement("input");
+                        remove.type = "button";
+                        remove.setAttribute('id','removeid');
+                        remove.innerHTML = "&#9747;";
+
+                        newLine.appendChild(checkbox);
+                        newLine.appendChild(newTask);
+                        newLine.appendChild(remove);
+
+
+                        var divselector = calArray[i];
+                        console.log(divselector); //should give day of week + body
+
+
+                        var quickListDiv = document.getElementById(divselector);  
+                        // var quickListDiv = document.getElementById(divselector).innerHTML = 'none';
+                        console.log(quickListDiv); // null
+                        quickListDiv.appendChild(newLine);
+
+                        formReset();
+                    }
+
+                }
+
+                
+            }
+
+            // quicklist task
+            function writeTask(){
+                // get the task title
+                var taskTitle = document.getElementById("task-title-input").value;
+                var newTask =  document.createTextNode(taskTitle);
+                
+                // make <li> elements 
+                var newLine = document.createElement("li"); 
+                newLine.setAttribute('id', 'liid'); //possibly not needed?
+                
+                //make checkbox element
+                var checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.className = "checkboxid";
+
+
+                //make an x button
+                var remove = document.createElement("input");
+                remove.type = "button";
+                remove.setAttribute('id','removeid');
+                remove.innerHTML = "&#9747;";
+
+                newLine.appendChild(checkbox);
+                newLine.appendChild(newTask);
+                newLine.appendChild(remove);
+
+                // now entering quicklist/calendar territory
+                // put the <li> in the quicklist div
+                var quickListDiv = document.querySelector("#quickListBody");
+                quickListDiv.appendChild(newLine);
+
+                //clear input after hitting submit
+                formReset();
+
+                //one day. this will make the text clickable to check off the item.
+                // const element = document.getElementsByClassName("taskid");
+                // element.addEventListener("click", clickcheck);
+                //     function clickcheck(){
+                //         document.getElementsByClassName("checkboxid").checked = true;
+                //     }
+            }
+
+
+
+        </script>
+
+    </body>
+</html>
