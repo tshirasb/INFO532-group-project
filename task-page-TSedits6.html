@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Group Project</title>
+        <link rel="stylesheet" href="stylesheet.css">
+
+        <!-- trashcan emoji stylesheet w3schools -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            .High {
+                color: red;
+            }
+
+            .Medium {
+              color: darkorange;
+            }
+
+            .Low {
+              color: green;
+            }
+
+            .descClass{
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: black;
+                font-size: small;
+                text-indent: 10%;
+            }
+            *
+            {box-sizing: border-box;}
+            html,body{width: 100%; height: 100%; margin:  0}
+            #div1 {
+                height: 50%;
+                display: flex;
+                gap: 10px;
+                padding: 10px;
+                /* border-style: solid; */
+            }
+            #inputForm{
+                width:  60%;
+                display: flex;
+                flex-direction: column;
+                /* align-content: space-around; */
+                /* justify-content: space-between; */
+                /* border-style: solid;
+                border-color: red; */
+
+            }
+                
+            #div1-header {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: x-large;
+                color: black;
+
+                /* border-style: solid;
+                border-color: orange; */
+
+                display: flex;
+                flex-direction: row;
+                /* align-self: flex-start; */
+                height: auto;
+                justify-content: flex-start;
+            }
+            p{
+                /* border-style: dotted; */
+                padding-left: 0%;
+                margin: 0;
+            }
+
+            #all-task-input{
+                display: flex;
+                flex-direction: row;
+                justify-content: left;
+                /* padding: 10px; */
+                /* height: 40%; */
+
+                /* border-style: solid;
+                border-color: black; */
+            }
+
+            #inputLeft{
+                display: flex;
+                flex-direction: column;
+                padding-right: 10px;
+                padding-top: 10px;
+                /* border-style: solid;
+                border-color: yellow; */
+
+            }
+
+            #task-title-input {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            .checkbox-input {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items:flex-end;
+
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: small;
+
+                /* border-style: solid;
+                border-color: green; */
+                line-height: 2px;
+                
+            }
+
+            .checkbox-input-form{
+                /* make the list items unselectable */
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            } 
+
+            #task-buttons-div{
+                display: flex;
+                flex-direction: row;
+                /* border-style: dashed; */
+                padding: 10px;
+                justify-content: space-between;
+                align-content: center;
+                width: 100%;
+            }
+            #task-clear-div{
+                display:flex;
+                padding-top: 10px;
+            }
+            #task-clear-btn{
+                background-color: lightcoral;
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+                border:none;
+                border-radius: 5px;
+                align-self: flex-end;
+                width: 30px;
+                height: 30px;
+            }
+            #task-clear-btn:hover{
+                background-color: black;
+            }
+            .task-submit-btn-div{
+                /* border-style: solid; */
+                width: auto;
+                align-self: flex-end;
+                margin-top: auto;
+                display: flex;
+            }
+            #task-submit-btn{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 500px;
+                color: white;
+                border-radius: 5px;
+                /* float: bottom; */
+                width: 100px;
+                padding: 5px;
+                border: none;
+                background-color: black;
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+                /* align-self: flex-end; */
+
+            }
+            #task-submit-btn:hover {
+                background-color: mediumseagreen;
+            }
+            #quickList{
+                display: flex;
+                flex-direction: column;
+                width: 30%;
+                /* border-style: solid; */
+                background-color: lightgray;
+                border-radius: 5px;
+
+
+            }
+
+            #quickListHeader{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: x-large;
+                color: black;
+                align-self: center;
+                /* display: flex; */
+                text-align: center;
+                /* border-style: solid; */
+                background-color: mediumseagreen;
+                border-radius: 5px;
+                width: 80%;
+                margin-top: 5px;
+                padding: 5px;
+
+            }
+
+            #quickListBody{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: black;
+                /* border-style: solid; */
+
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            #div2 {
+                height: 40%;
+                display:  flex;
+                gap: 10px;
+                justify-content: space-around;
+                padding: 10px;
+                /* border-style: solid; */
+            }
+            .weekdays{
+                width: calc(100%/5 - 10px);
+                background-color: lightgray;
+                display: flex;
+                flex-direction: column;
+                /* border-style: solid; */
+                border-radius: 5px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: black;
+            }
+            .weekday-header{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: large;
+                color: black;
+                /* border-style:solid; */
+                align-self:center;
+                display: flex;
+                justify-content:center;
+                width: 80%;
+                margin-top: 5px;
+                padding: 5px;
+                background-color: mediumseagreen;
+                border-radius: 5px;
+            }
+
+            img {
+                /* display: flex; */
+                margin-left: 10px;
+                width: auto;
+                height: 8%;
+                /* border-style: solid; */
+            }
+
+            /* this bit makes the text input thicker */
+            input[type=text] {
+                width: 100%;
+                padding: 10px;
+                /* margin: 8px 0; */
+                box-sizing: border-box;
+            }
+            textarea {
+                width: 100%;
+                height: 150px;
+                padding: 10px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                font-size: 14px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                resize: none;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <a href="landing-page.html">
+            <img src="logo-image2.png" alt="site image TaskRobot">
+        </a>
+
+        <div id="div1">
+            <div id="inputForm">
+                <div id="div1-header">
+                    <p></p>
+                    <p>Input Tasks</p>
+                    
+                </div>
+
+                <div id="all-task-input">
+                    <div id="inputLeft">
+                        <label for="task-title-input"></label><input name="task-title-input" id="task-title-input" type="text" value="" placeholder="task title (required)"></br>
+                        <label for="task-desc-input"></label><textarea name="task-desc-input" id="task-desc-input" rows="4" cols="50" placeholder="task description (optional)"></textarea></br>
+                    </div>
+                    <div class="checkbox-input">
+                        <div class="checkbox-input-form" >
+                            <form name="checkboxInputForm">
+                                <h3>Priority:</h3>
+                            <input type="radio" id="priorityHigh" name="priorityLevel" value="High">
+                            <label for="priorityHigh"> High</label>
+                            <input type="radio" id="priorityMedium" name="priorityLevel" value="Medium">
+                            <label for="priorityMedium"> Medium</label>
+                            <input type="radio" id="priorityLow" name="priorityLevel" value="Low">
+                            <label for="priorityLow"> Low</label><br><br>
+                            <h3>Due:</h3>
+                            <input type="radio" id="Monday" name="dueDate" class="dueDate" value="M">
+                            <label for="Monday"> M</label>
+                            <input type="radio" id="Tuesday" name="dueDate" class="dueDate" value="T">
+                            <label for="Tuesday"> T</label>
+                            <input type="radio" id="Wednesday" name="dueDate" class="dueDate" value="W">
+                            <label for="Wednesday"> W</label>
+                            <input type="radio" id="Thursday" name="dueDate" class="dueDate" value="R">
+                            <label for="Thursday"> R</label>
+                            <input type="radio" id="Friday" name="dueDate" class="dueDate" value="F">
+                            <label for="Friday"> F</label><br><br>
+                            
+                            
+                            <div id="task-buttons-div">
+                                <div id="task-clear-div">
+                                    <button type="button" id="task-clear-btn" onclick="formReset()"><i class="fa fa-trash-o" style="color:white"></i></button>
+                                </div>
+                                <div class="task-submit-btn-div">
+                                    <button type="button" id="task-submit-btn" onclick="submitFunc()" >Submit Task</button>
+                                </div>
+                            </div>
+                            </form>
+                            
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+
+            <!-- end of input form -->
+            </div>
+
+            <div id="quickList">
+                <div id="quickListHeader">
+                    Quick List
+                </div>
+                <ul>
+                    <div id="quickListBody">
+
+                    </div>
+                </ul>
+                
+            </div>
+
+        <!-- end of div 1 -->
+        </div>
+
+        <div id="div2">
+            <div class="weekdays" id="M">
+                <div class="weekday-header">Monday</div>
+                <ul>
+                    <div id="mondayBody" name="dayofweek">
+
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="T">
+                <div class="weekday-header">Tuesday</div>
+                <ul>
+                    <div id="tuesdayBody">
+
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="W">
+                <div class="weekday-header">Wednesday</div>
+                <ul>
+                    <div id="wednesdayBody">
+
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="R">
+                <div class="weekday-header">Thursday</div>
+                <ul>
+                    <div id="thursdayBody">
+
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="F">
+                <div class="weekday-header">Friday</div>
+                <ul>
+                    <div id="fridayBody">
+
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+
+            class Task{
+                constructor(title, desc, priority, dueDate){
+                    this.title = title;
+                    this.desc = desc;
+                    this.priority = priority;
+                    this.dueDate = dueDate;
+                }
+            }
+            
+            function formReset(){
+                document.getElementById("task-title-input").value = "";
+                document.getElementById("task-desc-input").value = "";
+
+                for (i = 0; i < 3; i++){
+                    document.checkboxInputForm.priorityLevel[i].checked = false;                }
+
+                for (i = 0; i < 5; i++){
+                    document.checkboxInputForm.dueDate[i].checked = false;
+                }
+
+            }
+            
+            function submitFunc(){
+
+                var checkifcheck = document.querySelectorAll('input[name="dueDate"]:checked');
+                console.log(checkifcheck);
+                
+                //if array of checked due dates is empty, go to ql else go to cal
+                if (checkifcheck.length == 0 && document.getElementById("task-title-input").value != ""){
+                    addQuickList();
+                } else if (document.getElementById("task-title-input").value != ""){
+                    addCal();
+                }
+                formReset();
+            } 
+
+            function addQuickList(){
+                
+                var entry = new Task (
+                    document.getElementById("task-title-input").value,
+                    document.getElementById("task-desc-input").value,
+                    document.checkboxInputForm.priorityLevel.value,
+                    document.querySelectorAll('input[name="dueDate"]:checked')
+                )
+                console.log(entry);
+
+                //get title
+                var taskTitle = entry.title;
+                var newTask =  document.createTextNode(taskTitle);
+
+                //add linebreak for desc
+                var linebreak = document.createElement("br");
+
+                //make desc element
+                var descElement = entry.desc;
+                var newDesc = document.createTextNode(descElement);
+                var descLine = document.createElement("p");
+                descLine.appendChild(newDesc);
+                descLine.setAttribute("class", "descClass");
+
+                // get priority
+                priorityVar = entry.priority;
+
+                //create li
+                var newLine = document.createElement("li");
+
+                //make priority colors work!
+                newLine.setAttribute("class", priorityVar)
+
+                //make checkbox element
+                var checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.className = "checkboxid";
+
+                //append
+                newLine.appendChild(checkbox);
+                newLine.appendChild(newTask);
+                newLine.appendChild(linebreak);
+                newLine.appendChild(descLine);
+
+                
+
+                var quickListDiv = document.querySelector("#quickListBody");
+                quickListDiv.appendChild(newLine);
+            }
+
+            function addCal(){
+                //BELOW from quicklist. prevent repetition?
+                var entry = new Task (
+                    document.getElementById("task-title-input").value,
+                    document.getElementById("task-desc-input").value,
+                    document.checkboxInputForm.priorityLevel.value,
+                    document.querySelectorAll('input[name="dueDate"]:checked')
+                )
+                console.log(entry.dueDate);
+                
+                //get title
+                var taskTitle = entry.title;
+                var newTask =  document.createTextNode(taskTitle);
+
+                //add linebreak for desc
+                var linebreak = document.createElement("br");
+
+                //make desc element
+                var descElement = entry.desc;
+                var newDesc = document.createTextNode(descElement);
+                var descLine = document.createElement("p");
+                descLine.appendChild(newDesc);
+                descLine.setAttribute("class", "descClass");
+
+                // get priority
+                priorityVar = entry.priority;
+
+                //create li
+                var newLine = document.createElement("li");
+
+                //make priority colors work!
+                newLine.setAttribute("class", priorityVar)
+
+                //make checkbox element
+                var checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.className = "checkboxid";
+
+                //append
+                newLine.appendChild(checkbox);
+                newLine.appendChild(newTask);
+                newLine.appendChild(linebreak);
+                newLine.appendChild(descLine);
+
+                //BELOW UNDER CONSTRUCTION
+
+                for (i = 0; i < 5; i++){
+                    switch(i){
+                        case 1:
+                            if (document.querySelector('#Monday').checked == true){
+                                var mondayDiv = document.querySelector("#mondayBody");
+                                mondayDiv.appendChild(newLine);
+                            }
+                            break;
+                        case 2:
+                            if (document.querySelector('#Tuesday').checked == true){
+                                var tuesdayDiv = document.querySelector("#tuesdayBody");
+                                tuesdayDiv.appendChild(newLine);
+                            }
+                            break;
+                        case 3: 
+                            if (document.querySelector('#Wednesday').checked == true){
+                                var wednesdayDiv = document.querySelector("#wednesdayBody");
+                                wednesdayDiv.appendChild(newLine);
+                            }
+                            break;
+                        case 4:
+                            if (document.querySelector('#Thursday').checked == true){
+                                var thursdayDiv = document.querySelector("#thursdayBody");
+                                thursdayDiv.appendChild(newLine);
+                            }
+                            break;
+                        default:
+                            if (document.querySelector('#Friday').checked == true){
+                                var fridayDiv = document.querySelector("#fridayBody");
+                                fridayDiv.appendChild(newLine);
+                            }
+                            break;
+                    }
+                }
+            }
+                
+        </script>
+
+    </body>
+</html>
