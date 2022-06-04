@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title>Group Project</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <!-- trashcan emoji stylesheet w3schools -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">   
+    </head>
+    <body>
+        <a href="landing-page.html">
+            <img src="logo-image2.png" alt="site image TaskRobot">
+        </a>
+        <div id="div1">
+            <div id="inputForm">
+                <div id="div1-header">
+                    <p></p>
+                    <p>Input Tasks</p>
+                    
+                </div>
+                <div id="all-task-input">
+                    <div id="inputLeft">
+                        <label for="task-title-input"></label><input name="task-title-input" id="task-title-input" type="text" value="" placeholder="task title (required)"></br>
+                        <label for="task-desc-input"></label><textarea name="task-desc-input" id="task-desc-input" rows="4" cols="50" placeholder="task description (optional)"></textarea></br>
+                    </div>
+                    <div class="checkbox-input">
+                        <div class="checkbox-input-form" >
+                            <form name="checkboxInputForm">
+                                <h3>Priority:</h3>
+                            <input type="radio" id="priorityHigh" name="priorityLevel" value="High">
+                            <label for="priorityHigh"> High</label>
+                            <input type="radio" id="priorityMedium" name="priorityLevel" value="Medium">
+                            <label for="priorityMedium"> Medium</label>
+                            <input type="radio" id="priorityLow" name="priorityLevel" value="Low">
+                            <label for="priorityLow"> Low</label><br><br>
+                            <h3>Due:</h3>
+                            <input type="radio" id="Monday" name="dueDate" class="dueDate" value="M">
+                            <label for="Monday"> M</label>
+                            <input type="radio" id="Tuesday" name="dueDate" class="dueDate" value="T">
+                            <label for="Tuesday"> T</label>
+                            <input type="radio" id="Wednesday" name="dueDate" class="dueDate" value="W">
+                            <label for="Wednesday"> W</label>
+                            <input type="radio" id="Thursday" name="dueDate" class="dueDate" value="R">
+                            <label for="Thursday"> R</label>
+                            <input type="radio" id="Friday" name="dueDate" class="dueDate" value="F">
+                            <label for="Friday"> F</label><br><br>
+                            <div id="task-buttons-div">
+                                <div id="task-clear-div">
+                                    <button type="button" id="task-clear-btn" onclick="formReset()"><i class="fa fa-trash-o" style="color:white"></i></button>
+                                </div>
+                                <div class="task-submit-btn-div">
+                                    <button type="button" id="task-submit-btn" onclick="submitFunc()" >Submit Task</button>
+                                </div>
+                            </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            <!-- end of input form -->
+            </div>
+            <div id="quickList">
+                <div id="quickListHeader">
+                    Quick List
+                </div>
+                <ul>
+                    <div id="quickListBody">
+
+                    </div>
+                </ul>
+            </div>
+
+        <!-- end of div 1 -->
+        </div>
+        <div id="div2">
+            <div class="weekdays" id="M">
+                <div class="weekday-header">Monday</div>
+                <ul>
+                    <div id="mondayBody" name="dayofweek">
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="T">
+                <div class="weekday-header">Tuesday</div>
+                <ul>
+                    <div id="tuesdayBody">
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="W">
+                <div class="weekday-header">Wednesday</div>
+                <ul>
+                    <div id="wednesdayBody">
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="R">
+                <div class="weekday-header">Thursday</div>
+                <ul>
+                    <div id="thursdayBody">
+                    </div>
+                </ul>
+            </div>
+            <div class="weekdays" id="F">
+                <div class="weekday-header">Friday</div>
+                <ul>
+                    <div id="fridayBody">
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
